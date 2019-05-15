@@ -16,14 +16,7 @@ function largestNumber(arr) {
         if (arr[i] > largestNumber)
         largestNumber = arr[i]
     }
-    return largestNumber || null
-    
-
-    // arr.forEach(function (value) {
-    //     if (value > largestNumber)
-    //     largestNumber = value
-    // });
-    // return largestNumber
+    return largestNumber || nul
 }
 
 
