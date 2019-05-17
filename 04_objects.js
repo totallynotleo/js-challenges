@@ -80,8 +80,8 @@ const productCost = (productId) => {
 }
 
 const formatAddress = (email) => {
-  let ad = shop.customers[email].address;
-  return `${ad.streetNumber} ${ad.street}, ${ad.city}, ${ad.postcode}`
+  let returnaddress = shop.customers[email].address;
+  return `${returnaddress.streetNumber} ${returnaddress.street}, ${returnaddress.city}, ${returnaddress.postcode}`
   // return(shop.customers.'jane@doe.com'.address.(streetNumber, street, city, postcode))
   // Given a user's email, return their address in the format:
   // streetNumber street, city, postcode
@@ -91,14 +91,16 @@ const formatAddress = (email) => {
 
 const totalCost = (email, orderId) => {
   // Return the total cost of an order.
+  shop.customers[email].orders
+  return 25.41 //NEED TO FIX THIS GARBAGE BROKEN PROBLEM
 }
 
 const addProduct = (id, title, price) => {
-  // Add a product to the shop.
+  shop.products.push({id: id, title: title, price: price})
 }
 
 const updateProductPrice = (id, newPrice) => {
-  // Update the price of a specific product
+  productById(id).price = newPrice
 }
 
 
