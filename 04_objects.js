@@ -52,27 +52,36 @@ const shop = {
 }
 
 const shopTitle = () => {
-  // Return the shop title (you have access to the shop object from here)
+  return shop.title
 }
 
 const upperCase = (string) => {
-  // Return an uppercase version of string
+  return string.toUpperCase()
 }
 
 const upperCaseShopTitle = () => {
+ return  upperCase(shopTitle())
   // Return an uppercase shop title.
   // Don't repeat yourself. Use the two functions you just built!
 }
 
 const productById = (productId) => {
-  // Return a specific product object
+  for (product of shop.products) {
+    if (product.id === productId) {
+      return product;
+    }
+  }
+  return false;
 }
 
 const productCost = (productId) => {
+  return productById(productId).price
   // given a product id, return its cost. DRY ;)
 }
 
 const formatAddress = (email) => {
+  let ad = shop.customers[email].address;
+  return `${ad.streetNumber} ${ad.street}, ${ad.city}, ${ad.postcode}`
   // return(shop.customers.'jane@doe.com'.address.(streetNumber, street, city, postcode))
   // Given a user's email, return their address in the format:
   // streetNumber street, city, postcode
