@@ -9,9 +9,7 @@
 // Write at least 2 more tests for corner cases and make sure your
 // implementation passes those tests.
 
-function findWinner(players) {
-  // Your code here
-}
+function findWinner(players) {}
 
 var assert = require('assert');
 
