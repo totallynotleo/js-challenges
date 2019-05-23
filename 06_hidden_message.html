@@ -16,40 +16,55 @@
   CSS 'display' can be set to 'block' (show) or 'none' (hide).
 
  -->
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Hidden Message</title>
+    <head>
+        <title>Hidden Message</title>
 
-    <style>
-    body {
-      text-align: center;
-    }
-    #hidden-message {
-      background: #c4c5ff;
-      padding: 200px;
-      display: none;
-    }
-    </style>
-  </head>
+        <style>
+            body {
+                text-align: center;
+            }
+            #hidden-message {
+                background: #c4c5ff;
+                padding: 200px;
+                display: none;
+            }
+        </style>
+    </head>
 
-  <body>
-    <div id="hidden-message">This is our hidden message!</div>
-    <button id="button-show">Show secret message</button>
-  </body>
+    <body>
+        <div id="hidden-message">This is our hidden message!</div>
+        <button id="button-show">Show secret message</button>
+        <button id="button-hide">Hide secret message</button>
+        <button id="change-color">Change the Color!</button>
+    </body>
 
-  <script>
-  // Get the element #hidden-message and assign it to hiddenMessage variable
-  const hiddenMessage = document.querySelector('#hidden-message')
-  
-  // Get the element #button-show and assign it to buttonShow variable
-  const buttonShow = document.querySelector('#button-show')
+    <script>
+        // Get the element #hidden-message and assign it to hiddenMessage variable
+        const hiddenMessage = document.querySelector('#hidden-message');
 
-  // Listen for a buttonShow click
-  buttonShow.onclick = function () {
-    // buttonShow has been clicked, show the hidden message.
-    hiddenMessage.style.display = 'block';
-  }
-  </script>
+        // Get the element #button-show and assign it to buttonShow variable
+        const buttonShow = document.querySelector('#button-show');
 
+        // Listen for a buttonShow click
+        buttonShow.onclick = function() {
+            // buttonShow has been clicked, show the hidden message.
+            hiddenMessage.style.display = 'block';
+        };
+
+        // Get the element #button-hide and assign it to buttonHide variable
+        const buttonHide = document.querySelector('#button-hide');
+
+        buttonHide.onclick = function() {
+            hiddenMessage.style.display = 'none';
+        };
+
+        const changeColor = document.querySelector('#change-color');
+
+        changeColor.onclick = function() {
+            hiddenMessage.style.background =
+                '#' + ((Math.random() * 0xffffff) << 0).toString(16);
+        };
+    </script>
 </html>
