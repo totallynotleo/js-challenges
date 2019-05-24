@@ -15,9 +15,25 @@ Example:
     In the third and final step we are only left with 8 at index 2.
 
 */
+function getMidpoint(array) {
+    return Math.floor(array.length / 2);
+}
 
 function binarySearch(sortedArray, searchValue) {
-    // Your code here
+    counter = 0;
+    getMidpoint(sortedArray);
+    counter += 1;
+    
+    //Edge Cases & invalid arrays. 
+    if (sortedArray.length) == 0 {
+        return false
+    } elsif (sortedArray.length) == 1 {
+        return [1,1]
+    }
+
+    
+    //splice the half of the array that doesn't include the value
+    //do until you find the searchvalue, then return the index number of the thing
 }
 
 let assert = require('assert');
