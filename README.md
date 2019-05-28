@@ -47,4 +47,8 @@
 * 07_binarySearch
 * 08_welcome
 * 09_oddOrEven
+<<<<<<< HEAD
 >>>>>>> aeba44338511e7f410e030d4230ba84624adc812
+=======
+* 10_numberPersistence
+>>>>>>> 2b34ec40960d24374eafa8a7bfbacc4fed747978
