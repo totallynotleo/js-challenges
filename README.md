@@ -7,7 +7,6 @@
    `git remote add upstream https://github.com/CoderAcademy-BRI/js-challenges`
 3. For each challenge (in your fork):
     1. Checkout the branch (in your fork)<br/>
-<<<<<<< HEAD
        `git checkout -b <challenge_branch>`
     2. Pull down the challenge: <br/>
        `git pull --no-edit upstream <challenge_branch>`
@@ -27,28 +26,6 @@
 -   06_hiddenMessage
 -   07_binarySearch
 -   08_welcome
-=======
-     `git checkout -b <challenge_branch>`
-    3. Pull down the challenge: <br/>
-     `git pull --no-edit upstream <challenge_branch>`
-    4. Complete the challenge
-    5. Checkout master branch and merge challenge branch:<br/>
-    `git checkout master && git merge <challenge_branch>`
-    1. Push to master in your fork:<br/>
-     `git push origin master`
-
-## List of challenge branches
-* 01_jsIntro
-* 02_largestNumber
-* 03_openDoor
-* 04_objects
-* 05_sumNumbers
-* 06_hiddenMessage
-* 07_binarySearch
-* 08_welcome
-* 09_oddOrEven
-<<<<<<< HEAD
->>>>>>> aeba44338511e7f410e030d4230ba84624adc812
-=======
-* 10_numberPersistence
->>>>>>> 2b34ec40960d24374eafa8a7bfbacc4fed747978
+-   09_oddOrEven
+-   10_numberPersistence
+-   12_vowels
