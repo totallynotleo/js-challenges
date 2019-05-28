@@ -42,28 +42,18 @@
     </body>
 
     <script>
+        const names = Array.from(document.querySelectorAll('input'));
         const firstName = document.querySelector('input.first-name');
         const lastName = document.querySelector('input.last-name');
         const welcomeMessage = document.querySelector('h1');
-        lastName.onkeyup = function() {
-            if (firstName === '' && lastName === '') {
-                welcomeMessage.textContent = ``;
-            } else {
-                // hint: name.value gives you the current text in the input box
-                welcomeMessage.textContent = `Welcome, ${firstName.value} ${
-                    lastName.value
-                }!`;
-            }
-        };
-        firstName.onkeyup = function() {
-            if (firstName === '' && lastName === '') {
-                welcomeMessage.textContent = ``;
-            } else {
-                // hint: name.value gives you the current text in the input box
-                welcomeMessage.textContent = `Welcome, ${firstName.value} ${
-                    lastName.value
-                }!`;
-            }
-        };
+        names.forEach(name => {
+            name.onkeyup = function() {
+                if (names.every(name => name.value === '')) {
+                    welcomeMessage.textContent = '';
+                } else {
+                    welcomeMessage.textContent = `Welcome ${firstName.value.toUpperCase()} ${lastName.value.toUpperCase()}`;
+                }
+            };
+        });
     </script>
 </html>
