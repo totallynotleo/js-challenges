@@ -11,26 +11,23 @@ with no changes to the function?
 */
 
 function largestNumber(arr) {
-    let largestNumber = 0
-    for(i = 0; i <= arr.length; i++) {
-        if (arr[i] > largestNumber)
-        largestNumber = arr[i]
+    let largestNumber = 0;
+    for (i = 0; i <= arr.length; i++) {
+        if (arr[i] > largestNumber) largestNumber = arr[i];
     }
-    return largestNumber || nul
+    return largestNumber || null;
 }
-
 
 var assert = require('assert');
 
-describe('largestNumber', function () {
-    it('should return the largest number', function () {
+describe('largestNumber', function() {
+    it('should return the largest number', function() {
         assert.equal(10, largestNumber([5, -2, 10]));
     });
-    it('should ignore invalid array entries', function () {
+    it('should ignore invalid array entries', function() {
         assert.equal(10, largestNumber([10, 10, 's']));
     });
-    it('should return null if the array is empty', function () {
+    it('should return null if the array is empty', function() {
         assert.equal(null, largestNumber([]));
     });
-
 });

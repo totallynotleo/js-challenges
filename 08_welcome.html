@@ -48,15 +48,16 @@
         lastName.onkeyup = function() {
             if (firstName === '' && lastName === '') {
                 welcomeMessage.textContent = ``;
+            } else {
+                // hint: name.value gives you the current text in the input box
+                welcomeMessage.textContent = `Welcome, ${firstName.value} ${
+                    lastName.value
+                }!`;
             }
-            // hint: name.value gives you the current text in the input box
-            welcomeMessage.textContent = `Welcome, ${firstName.value} ${
-                lastName.value
-            }!`;
         };
         firstName.onkeyup = function() {
-            if (firstName ===  && lastName === '') {
-                welcomeMessage.textContent = `asdasd`;
+            if (firstName === '' && lastName === '') {
+                welcomeMessage.textContent = ``;
             } else {
                 // hint: name.value gives you the current text in the input box
                 welcomeMessage.textContent = `Welcome, ${firstName.value} ${
