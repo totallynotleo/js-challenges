@@ -36,66 +36,69 @@ Using Google will also help a lot for coming up with ideas.
 */
 
 const problem = {
-  A: {
-    B: 2,
-    C: 7
-  },
-  B: {
-    D: 1,
-    E: 8
-  },
-  C: {
-    B: 3,
-    E: 12
-  },
-  D: {
-    E: 4,
-    F: 9
-  },
-  E: {
-    F: 4
-  },
-  F: {}
+    A: {
+        B: 2,
+        C: 7
+    },
+    B: {
+        D: 1,
+        E: 8
+    },
+    C: {
+        B: 3,
+        E: 12
+    },
+    D: {
+        E: 4,
+        F: 9
+    },
+    E: {
+        F: 4
+    },
+    F: {}
 };
 
 const dijkstra = (graph, start, end) => {
-  // Your code here
+    // Your code here
 };
+console.log(problem);
+let connections = Object.entries(problem);
+for (const [node, weightOfConnection] of connections) {
+    console.log(`Node = ${connection}, weight = ${weightOfConnection}`);
+}
+// var assert = require('assert');
 
+// describe('Find shortest path', function () {
+//   context('When there is a valid path and start is different from end', function () {
+//     it('Should return the distance 11 from A to F with path A,B,D,E,F', function () {
+//       assert.deepEqual({
+//         distance: 11,
+//         path: ['A', 'B', 'D', 'E', 'F']
+//       }, dijkstra(problem, 'A', 'F'))
+//     })
+//     it('Should return the distance 9 from B to F with path B,D,E,F', function () {
+//       assert.deepEqual({
+//         distance: 9,
+//         path: ['B', 'D', 'E', 'F']
+//       }, dijkstra(problem, 'B', 'F'))
+//     })
 
-var assert = require('assert');
+//   })
 
-describe('Find shortest path', function () {
-  context('When there is a valid path and start is different from end', function () {
-    it('Should return the distance 11 from A to F with path A,B,D,E,F', function () {
-      assert.deepEqual({
-        distance: 11,
-        path: ['A', 'B', 'D', 'E', 'F']
-      }, dijkstra(problem, 'A', 'F'))
-    })
-    it('Should return the distance 9 from B to F with path B,D,E,F', function () {
-      assert.deepEqual({
-        distance: 9,
-        path: ['B', 'D', 'E', 'F']
-      }, dijkstra(problem, 'B', 'F'))
-    })
-
-  })
-
-  context('When there is no path between the start and end', function () {
-    it('Should return the distance Infinity if there is no path', function () {
-      assert.deepEqual({
-        distance: Infinity,
-        path: []
-      }, dijkstra(problem, 'B', 'A'));
-    })
-  })
-  context('When the start and end are the same', function () {
-    it('Should return a distance of 0 from B to B with path B', function () {
-      assert.deepEqual({
-        distance: 0,
-        path: ['B']
-      }, dijkstra(problem, 'B', 'B'));
-    })
-  })
-})
+//   context('When there is no path between the start and end', function () {
+//     it('Should return the distance Infinity if there is no path', function () {
+//       assert.deepEqual({
+//         distance: Infinity,
+//         path: []
+//       }, dijkstra(problem, 'B', 'A'));
+//     })
+//   })
+//   context('When the start and end are the same', function () {
+//     it('Should return a distance of 0 from B to B with path B', function () {
+//       assert.deepEqual({
+//         distance: 0,
+//         path: ['B']
+//       }, dijkstra(problem, 'B', 'B'));
+//     })
+//   })
+// })
