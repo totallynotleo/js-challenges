@@ -28,29 +28,26 @@ the last customer at till2 is served.
 
 Check your solutions with mocha 16_supermarket.js
 */
+function isntANumber(value) {
+    return value != NaN;
+}
 
 function queueTime(customers, n) {
-    if (n == 0) {
-        return 0;
-    } else if (customers.length == 0) {
-        return 0;
-    }
     //create an array with n tills, each with a starting value of 0
     var checkouts = Array(n).fill(0);
-    //put everything in a while loop so it cancels out after the customers array is empty
+    //While there are still customers waiting for checkout
     while (customers.length > 0) {
         for (let i = 0; i < checkouts.length; i++) {
-            checkouts[i] = checkouts[i] + customers[0];
-            console.log(checkouts[i]);
-            customers.shift();
-        }
-        console.log("It's gone through");
-    }
-    for (let ii = 0; ii < checkouts.length; ii++) {
-        if (checkouts[ii] === NaN) {
-            checkouts[ii] = 0;
+            // check that there are still customers waiting otherwise NaN problem
+            if (customers.length > 0) {
+                //update the checkouts to take the first customers
+                checkouts[i] = checkouts[i] + customers[0];
+                //remove customers from the waiting list
+                customers.shift();
+            }
         }
     }
+    //return the checkout which takes the longest
     return Math.max(...checkouts);
 }
 
