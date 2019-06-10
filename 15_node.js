@@ -2,7 +2,7 @@
   Introducing NodeJS!
 
   You're looking at a bare bones web server.
-  Run the server (node 17_node.js) and open
+  Run the server (node 15_node.js) and open
   localhost:3000/hello in your browser.
 
   Challenge:
@@ -20,22 +20,27 @@
 
 */
 
-const http = require('http')
-const port = 3000
+const http = require('http');
+const port = 3000;
 
 const requestHandler = (request, response) => {
+    console.log('Woop, new request!', request.method, request.url);
 
-  console.log('Woop, new request!', request.method, request.url);
+    if (request.url === '/hello') {
+        response.end('world');
+    } else if (request.url === '/') {
+        response.end(
+            `<h1> This is the Homepage for Morning Challenge 15_node! </h1>
+            <br>
+            <p> It uses embedded HTML in the message being sent </p>`
+        );
+    }
 
-  if (request.url === '/hello') {
-    response.end('world')
-  }
+    response.end('Not found!!');
+};
 
-  response.end('Not found!!')
-}
-
-const server = http.createServer(requestHandler)
+const server = http.createServer(requestHandler);
 
 server.listen(port, () => {
-  console.log(`server is listening on ${port}`)
-})
+    console.log(`server is listening on ${port}`);
+});
