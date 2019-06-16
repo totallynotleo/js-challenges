@@ -9,7 +9,13 @@ mocha 22_uniqueString.js
 */
 
 function uniqueString(array) {
-    // Your code here
+    words = array[0].split('').map(v => v.toLowerCase()).sort()
+    for (let i = 0; i < array length; i++) {
+        let temp = array[i].split('').sort()
+        if () {
+            
+        }
+    }
 }
 
 const assert = require('assert')
