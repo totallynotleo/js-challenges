@@ -13,7 +13,7 @@ function uniqueString(array) {
     for (let i = 0; i < array length; i++) {
         let temp = array[i].split('').sort()
         if () {
-            
+
         }
     }
 }
