@@ -14,67 +14,120 @@ Examples:
 */
 
 const equalValues = (value1, value2) => {
+    value1Array = Object.entries(value1);
+    value2Array = Object.entries(value2);
+    // for (let i = 0; i < value1Array.length; i++) {
+    //     console.log(
+    //         `${i}th iteration 1: ${value1Array[i]} | Value 2: ${value2Array[i]}`
+    //     );
+    //     if (value1Array[i].join('') != value2Array[i].join('')) {
+    //         return false;
+    //     }
+    // }
+    return Object.entries(value1).join('') == Object.entries(value2).join('')
+        ? true
+        : false;
+};
 
-
-    // Your code below
-}
-
-
-
-const assert = require('assert')
+const assert = require('assert');
 describe('equalValues tests', () => {
     it('Should return true if the values are the same', () => {
-        assert.equal(equalValues({
-            a: [2, 3],
-            b: [4]
-        }, {
-            a: [2, 3],
-            b: [4]
-        }), true)
-        assert.equal(equalValues({
-            adam: 3,
-            laura: 4
-        }, {
-            adam: 3,
-            laura: 4
-        }), true)
-    })
+        assert.equal(
+            equalValues(
+                {
+                    a: [2, 3],
+                    b: [4]
+                },
+                {
+                    a: [2, 3],
+                    b: [4]
+                }
+            ),
+            true
+        );
+        assert.equal(
+            equalValues(
+                {
+                    adam: 3,
+                    laura: 4
+                },
+                {
+                    adam: 3,
+                    laura: 4
+                }
+            ),
+            true
+        );
+    });
     it('Should return false if the values are not the same', () => {
-        assert.equal(equalValues([{
-            a: 3
-        }, {
-            b: 4
-        }], [{
-            a: '3'
-        }, {
-            b: '4'
-        }]), false)
-        assert.equal(equalValues({
-            adam: 3,
-            laura: 4,
-            maisie: 2
-        }, {
-            adam: 3,
-            laura: 4
-        }), false)
-        assert.equal(equalValues({
-            a: 3
-        }, {
-            b: 4
-        }, {
-            b: 3
-        }, {
-            a: 4
-        }), false)
-        assert.equal(equalValues({
-            a: 3,
-            b: 2
-        }, {
-            a: 3
-        }, {
-            b: 2
-        }), false)
-    })
+        assert.equal(
+            equalValues(
+                [
+                    {
+                        a: 3
+                    },
+                    {
+                        b: 4
+                    }
+                ],
+                [
+                    {
+                        a: '3'
+                    },
+                    {
+                        b: '4'
+                    }
+                ]
+            ),
+            false
+        );
+        assert.equal(
+            equalValues(
+                {
+                    adam: 3,
+                    laura: 4,
+                    maisie: 2
+                },
+                {
+                    adam: 3,
+                    laura: 4
+                }
+            ),
+            false
+        );
+        assert.equal(
+            equalValues(
+                {
+                    a: 3
+                },
+                {
+                    b: 4
+                },
+                {
+                    b: 3
+                },
+                {
+                    a: 4
+                }
+            ),
+            false
+        );
+        assert.equal(
+            equalValues(
+                {
+                    a: 3,
+                    b: 2
+                },
+                {
+                    a: 3
+                },
+                {
+                    b: 2
+                }
+            ),
+            false
+        );
+    });
     // -------------------------------------------------------------------
     //                         Beast Mode - uncomment lines below
     // -------------------------------------------------------------------
@@ -84,4 +137,4 @@ describe('equalValues tests', () => {
     // it('Beast mode++: Should return true if one value is in JSON', () => {
     //     assert.equal(equalValues({a:3,b:4},{"a":3,"b":4}), true)
     // })
-})
+});

@@ -33,3 +33,8 @@
 -   14_supermarket
 -   15_node
 -   16_countEvens
+-   17_pangram
+-   18_lastIndex
+-   19_uniqueString
+-   20_commonCharacters
+-   21_equalValues
