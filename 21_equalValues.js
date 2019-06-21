@@ -16,6 +16,9 @@ Examples:
 const equalValues = (value1, value2) => {
     value1Array = Object.entries(value1);
     value2Array = Object.entries(value2);
+    let type1 = typeof value1;
+    let type2 = typeof value2;
+    return (type1 !== type2) return false;
     // for (let i = 0; i < value1Array.length; i++) {
     //     console.log(
     //         `${i}th iteration 1: ${value1Array[i]} | Value 2: ${value2Array[i]}`
@@ -24,9 +27,7 @@ const equalValues = (value1, value2) => {
     //         return false;
     //     }
     // }
-    return Object.entries(value1).join('') == Object.entries(value2).join('')
-        ? true
-        : false;
+    return Object.entries(value1).join('') == Object.entries(value2).join('');
 };
 
 const assert = require('assert');
