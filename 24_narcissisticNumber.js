@@ -13,24 +13,36 @@
 // # Error checking for text strings or other invalid inputs is not required, only valid integers will be passed into the function.
 
 function narcissisticNumber(number) {
-	// your code goes here
+    // Create an Array
+    var numberArray = number
+        .toString()
+        .split('')
+        .map(Number);
+
+    //Create a counter
+    let numberCheck = 0;
+    for (let i = 0; i < numberArray.length; i++) {
+        // Increment counter based on value ^ array.length
+        numberCheck += Math.pow(numberArray[i], numberArray.length);
+    }
+    return numberCheck == number;
 }
 
-let assert = require("assert")
+let assert = require('assert');
 
-describe("Not a narcissistic number", () => {
-	it("Should return false for 12", () => {
-		assert.equal(narcissisticNumber(12), false)
-	})
-	it("Should return false for 123", () => {
-		assert.equal(narcissisticNumber(123), false)
-	})
-})
-describe("A narcissistic number", () => {
-	it("Should return true for 153", () => {
-		assert.equal(narcissisticNumber(153), true)
-	})
-	it("Should return true for 1634", () => {
-		assert.equal(narcissisticNumber(1634), true)
-	})
-})
+describe('Not a narcissistic number', () => {
+    it('Should return false for 12', () => {
+        assert.equal(narcissisticNumber(12), false);
+    });
+    it('Should return false for 123', () => {
+        assert.equal(narcissisticNumber(123), false);
+    });
+});
+describe('A narcissistic number', () => {
+    it('Should return true for 153', () => {
+        assert.equal(narcissisticNumber(153), true);
+    });
+    it('Should return true for 1634', () => {
+        assert.equal(narcissisticNumber(1634), true);
+    });
+});
