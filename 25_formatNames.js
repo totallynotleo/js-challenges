@@ -29,12 +29,11 @@
 */
 
 function formatNames(names) {
-    names = names
+    return (names = names
         .map(object => `(${object.last}, ${object.first})`)
         .sort()
         .join(', ')
-        .toUpperCase();
-    return names;
+        .toUpperCase());
 }
 
 let assert = require('assert');

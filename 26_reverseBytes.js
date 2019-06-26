@@ -17,63 +17,102 @@
 // [1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0]
 
 function reverseBytes(data) {
-	// Your code goes here
+    returnArray = [];
+    while (data.length > 0) {
+        let currentByte = data.slice(0, 8);
+        console.log(currentByte);
+        returnArray.push(currentByte);
+        data.shift();
+        data.shift();
+        data.shift();
+        data.shift();
+        data.shift();
+        data.shift();
+        data.shift();
+        data.shift();
+    }
+    return returnArray
+        .reverse()
+        .join('')
+        .split('');
 }
 
-let assert = require("assert")
+let assert = require('assert');
 
-describe("reverseBytes", () => {
-	context("With empty input", () => {
-		it("should return an empty array with empty input", () => {
-			assert.deepEqual(reverseBytes([]), [])
-		})
-	})
-	context("with input", () => {
-		it("should return [0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1] for [1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0]", () => {
-			assert.deepEqual(reverseBytes([1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]), [
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				1,
-				1,
-				1,
-				1,
-				1,
-				1,
-				1,
-				1
-			])
-		})
-		it("should return [1,1,1,1,0,0,0,0, 0,0,0,0,1,1,1,1] for [0,0,0,0,1,1,1,1, 1,1,1,1,0,0,0,0]", () => {
-			assert.deepEqual(reverseBytes([0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0]), [
-				1,
-				1,
-				1,
-				1,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				1,
-				1,
-				1,
-				1
-			])
-		})
-		it("should return [0,0,0,0,0,0,0,0, 1,1,0,0,1.1,0,0, 0,0,0,1,0,1,1,1] for [0,0,0,1,0,1,1,1, 1,1,0,0,1.1,0,0, 0,0,0,0,0,0,0,0]", () => {
-			assert.deepEqual(
-				reverseBytes([0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]),
-				[0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1]
-			)
-		})
-	})
-})
+describe('reverseBytes', () => {
+    context('With empty input', () => {
+        it('should return an empty array with empty input', () => {
+            assert.deepEqual(reverseBytes([]), []);
+        });
+    });
+    context('with input', () => {
+        it('should return [0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1] for [1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0]', () => {
+            assert.deepEqual(
+                reverseBytes([1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]),
+                [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1]
+            );
+        });
+        it('should return [1,1,1,1,0,0,0,0, 0,0,0,0,1,1,1,1] for [0,0,0,0,1,1,1,1, 1,1,1,1,0,0,0,0]', () => {
+            assert.deepEqual(
+                reverseBytes([0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0]),
+                [1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1]
+            );
+        });
+        it('should return [0,0,0,0,0,0,0,0, 1,1,0,0,1.1,0,0, 0,0,0,1,0,1,1,1] for [0,0,0,1,0,1,1,1, 1,1,0,0,1.1,0,0, 0,0,0,0,0,0,0,0]', () => {
+            assert.deepEqual(
+                reverseBytes([
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]),
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    0,
+                    0,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    1,
+                    1,
+                    1
+                ]
+            );
+        });
+    });
+});
