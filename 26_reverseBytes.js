@@ -21,7 +21,7 @@ function reverseBytes(data) {
     while (data.length > 0) {
         let currentByte = data.slice(0, 8);
         console.log(currentByte);
-        returnArray.push(currentByte);
+        returnArray.unshift(currentByte);
         data.shift();
         data.shift();
         data.shift();
@@ -30,11 +30,10 @@ function reverseBytes(data) {
         data.shift();
         data.shift();
         data.shift();
+        console.log(`Data: ${data}`);
+        console.log(`Return array: ${returnArray}`);
     }
-    return returnArray
-        .reverse()
-        .join('')
-        .split('');
+    return `${returnArray}`;
 }
 
 let assert = require('assert');
