@@ -38,3 +38,12 @@
 -   19_uniqueString
 -   20_commonCharacters
 -   21_equalValues
+-   22-valueAndTimes
+-   23_conwaysGameOfLife
+-   24_narcissisticNumber
+-   25_formatNames
+-   26_reverseBytes
+-   27_looseChange
+-   28_decipher
+-   29_alphabetPosition
+-   30_divisibleCount

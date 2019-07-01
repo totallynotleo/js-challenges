@@ -13,17 +13,15 @@
 
 // EXTRA FUN!!! Make up another encryption and challenge your friends to write the decipher method
 
-function decipher(code) {
-	// your code goes here
-}
+function decipher(code) {}
 
-let assert = require("assert")
-describe("decipher", () => {
-	it("should decipher '72olle 103doo 100ya' as 'Hello good day'", () => {
-		assert.equal(decipher("72olle 103doo 100ya"), "Hello good day")
-	})
-	it("should decipher '82yade 115te 103o' as 'Ready set go'", () => {
-		assert.equal(decipher("82yade 115te 103o"), "Ready set go")
-	})
-})
+let assert = require('assert');
+describe('decipher', () => {
+    it("should decipher '72olle 103doo 100ya' as 'Hello good day'", () => {
+        assert.equal(decipher('72olle 103doo 100ya'), 'Hello good day');
+    });
+    it("should decipher '82yade 115te 103o' as 'Ready set go'", () => {
+        assert.equal(decipher('82yade 115te 103o'), 'Ready set go');
+    });
+});
 // write some more tests. Share then with your classmates

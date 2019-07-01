@@ -9,7 +9,13 @@
 // # Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11"(as a string)
 
 function alphabet_position(text) {
-    // Your code here
+    returnArray = [];
+    const noPunctuation = text.replace(/[^a-zA-Z]/g, '');
+    const textArray = noPunctuation.toLowerCase().split('');
+    for (let i = 0; i < textArray.length; i++) {
+        returnArray.push(textArray[i].charCodeAt(0) - 96);
+    }
+    return returnArray.join(' ');
 }
 
 let assert = require('assert');
