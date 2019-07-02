@@ -13,7 +13,21 @@
 
 // EXTRA FUN!!! Make up another encryption and challenge your friends to write the decipher method
 
-function decipher(code) {}
+function decipher(code) {
+    returnArray = [];
+    wordArray = code.split(' ');
+    console.log(wordArray);
+    for (let i = 0; i < wordArray.length; i++) {
+        let word = wordArray[i];
+        eachWord = word.split('');
+
+        // Swap the letters
+        var tempLetter = eachWord[1];
+        eachWord[1] = eachWord[eachWord.length - 1];
+        eachWord[eachWord.length - 1] = tempLetter;
+        console.log(eachWord);
+    }
+}
 
 let assert = require('assert');
 describe('decipher', () => {
