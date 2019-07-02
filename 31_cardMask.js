@@ -13,3 +13,18 @@ maskify(                "") ==                 ""
 maskify("Skippy")                                   == "##ippy"
 maskify("Nananananananananananananananana Batman!") == "######################################man!"
 */
+
+function maskify(input) {
+    inputArray = input.split('');
+    for (let i = 0; i < inputArray.length - 4; i++) {
+        inputArray[i] = '#';
+    }
+    return inputArray.join('');
+}
+
+let assert = require('assert');
+describe('maskify', () => {
+    it('should mask all but the last 4', () => {
+        assert.equal(maskify('123456789'), '#####6789');
+    });
+});
