@@ -17,6 +17,7 @@ function decipher(code) {
     returnArray = [];
     wordArray = code.split(' ');
     console.log(wordArray);
+    //Need to add: split the number and convert it
     for (let i = 0; i < wordArray.length; i++) {
         let word = wordArray[i];
         eachWord = word.split('');
