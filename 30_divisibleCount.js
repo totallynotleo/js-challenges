@@ -17,9 +17,27 @@ function divisibleCount(x, y, z) {
 
 let assert = require('assert');
 
-describe('Should return a correct result with example given', () => {
+describe('Should return a correct result with example given 3', () => {
     it('should return 3', () => {
         assert.equal(divisibleCount(6, 11, 2), '3');
+    });
+});
+
+describe('Should return a correct result with example given 50', () => {
+    it('should return 3', () => {
+        assert.equal(divisibleCount(1, 100, 2), '50');
+    });
+});
+
+describe('Should return a correct result with example given 5000', () => {
+    it('should return 3', () => {
+        assert.equal(divisibleCount(1, 10000, 2), '5000');
+    });
+});
+
+describe('Should return a correct result with example given 5000', () => {
+    it('should return 3', () => {
+        assert.equal(divisibleCount(1, 10000, 2), '5000');
     });
 });
 
