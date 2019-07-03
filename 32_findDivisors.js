@@ -43,6 +43,13 @@ describe('Should return the divisors of the input', () => {
             '2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 24, 30, 40, 60'
         );
     });
+
+    it('Should return the divisors of 12000', () => {
+        assert.equal(
+            divisors(12000),
+            '2, 3, 4, 5, 6, 8, 10, 12, 15, 16, 20, 24, 25, 30, 32, 40, 48, 50, 60, 75, 80, 96, 100, 120, 125, 150, 160, 200, 240, 250, 300, 375, 400, 480, 500, 600, 750, 800, 1000, 1200, 1500, 2000, 2400, 3000, 4000, 6000'
+        );
+    });
 });
 describe('Should return for prime number', () => {
     it("Should return '13 is prime'", () => {
