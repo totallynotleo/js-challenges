@@ -29,7 +29,7 @@
 -   09_oddOrEven
 -   10_numberPersistence
 -   12_vowels
--   13_dijkstra_algorithm
+-   13_dijkstraAlgorithm
 -   14_supermarket
 -   15_node
 -   16_countEvens
@@ -47,3 +47,11 @@
 -   28_decipher
 -   29_alphabetPosition
 -   30_divisibleCount
+-   31_cardMask
+-   32_findDivisors
+-   33_longestWord
+-   34_timeConvert
+-   35_twoToOne
+-   36_alphabetSoup
+-   37_filterList
+-   38_onesAndZeros
